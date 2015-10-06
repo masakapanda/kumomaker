@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Kumo</title>
+	<title>Kumomaker</title>
 	<style>
 		html, body {
 			height: 100%;
@@ -16,6 +16,8 @@
 			display: -webkit-flex;
 			display: flex;
 			background: #444;
+			color: white;
+			font-family: Verdana, "游ゴシック", YuGothic, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
 		}
 		
 		article{
@@ -40,6 +42,7 @@
 		}
 		canvas{
 			border-radius: 2px;
+			box-shadow:rgba(0, 0, 0, 0.65098) 0px 2px 3px;
 		}
 		
 		.ghost-button:hover, .ghost-button:active {
@@ -47,17 +50,19 @@
 			background:#FF9DB3;
 		}
 		
+		
 	</style>
 </head>
 <body class="main">
 	
 	<article>
-		<div>
+		<div class="container">
 			<canvas width=600 height=600 id="c"></canvas>
 		</div>
 		<div>
+			<h1>Kumomaker</h1>
+			<p>右クリックで保存</p>
 			<button v-on="click: redraw" class="ghost-button">redraw</button>
-			<button v-on="click: redraw" class="ghost-button">save</button>
 		</div>
 	</article>
 	
