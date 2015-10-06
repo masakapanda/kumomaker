@@ -4,17 +4,62 @@
 	<meta charset="UTF-8">
 	<title>Kumo</title>
 	<style>
-		#c{
-			width: 1200px;
-			height: 1200px;
+		html, body {
+			height: 100%;
+			margin: 0;
 		}
+		
+		body {
+			-webkit-align-items: center;  
+			-ms-flex-align: center;  
+			align-items: center;
+			display: -webkit-flex;
+			display: flex;
+			background: #444;
+		}
+		
+		article{
+			text-align: center;
+			margin: 0 auto;
+		}
+		.ghost-button {
+			color: #FF9DB3;
+			background: #444;
+			border: 1px solid #FF9DB3;
+			font-size: 30px;
+			padding: 7px 12px;
+			font-weight: normal;
+			margin: 6px 0;
+			margin-right: 12px;
+			display: inline-block;
+			text-decoration: none;
+			font-family: 'Open Sans', sans-serif;
+			min-width: 120px;
+			border-radius: 2px;
+			cursor: pointer;
+		}
+		canvas{
+			border-radius: 2px;
+		}
+		
+		.ghost-button:hover, .ghost-button:active {
+			color:#444;
+			background:#FF9DB3;
+		}
+		
 	</style>
 </head>
 <body class="main">
-	<h1>Kumo</h1>
 	
-	<button  v-on="click: redraw">Redraw</button>
-	<canvas width=1200 height=1200 id="c"></canvas>
+	<article>
+		<div>
+			<canvas width=600 height=600 id="c"></canvas>
+		</div>
+		<div>
+			<button v-on="click: redraw" class="ghost-button">redraw</button>
+			<button v-on="click: redraw" class="ghost-button">save</button>
+		</div>
+	</article>
 	
 	<script src="bundle.js"></script>
 </body>
